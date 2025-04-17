@@ -12,6 +12,22 @@
     <title>Hello, world!</title>
   </head>
   <body>
-    <mdui-button>Hello, world!</mdui-button>
+ <mdui-dialog
+  close-on-overlay-click
+  headline="Delete selected images?"
+  class="example-action"
+>
+  <mdui-button slot="action" variant="text">取消</mdui-button>
+  <mdui-button slot="action" variant="tonal">删除</mdui-button>
+</mdui-dialog>
+
+<mdui-button>打开对话框</mdui-button>
+
+<script>
+  const dialog = document.querySelector(".example-action");
+  const openButton = dialog.nextElementSibling;
+
+  openButton.addEventListener("click", () => dialog.open = true);
+</script>
   </body>
 </html>
